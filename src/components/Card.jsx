@@ -1,9 +1,18 @@
 import StarRoundedIcon from '@mui/icons-material/StarRounded';
 import CDNURL from '../../utils/common/cdnURl';
+import { useNavigate } from 'react-router-dom';
 
 const Card = ({ resturantData }) => {
+  const navigate = useNavigate();
+  const resId = resturantData?.info?.id;
+  
   return (
-    <div className="basis-1/5">
+    <div
+      onClick={() => {
+        navigate(`/resturant/${resId}`, {state:resId});
+      }}
+      className="basis-1/5 cursor-pointer"
+    >
       <img
         className="rounded-2xl w-full h-48 object-cover"
         src={CDNURL + resturantData?.info?.cloudinaryImageId}

@@ -8,6 +8,7 @@ const navList = [
     id: 1,
     name: 'Search',
     icon: SearchOutlinedIcon,
+    
   },
   {
     id: 2,

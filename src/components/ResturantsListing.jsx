@@ -102,7 +102,7 @@ const ResturantsListing = ({ apiData }) => {
       <div className="flex flex-row justify-center gap-14 mt-4 flex-wrap">
         {ratingBasedFilter?.length !== 0 ? (
           ratingBasedFilter?.map((item, index) => (
-            <Card resturantData={resturantData[index]} />
+            <Card key={index} resturantData={resturantData[index]} />
           ))
         ) : (
           <div>No resturant found</div>

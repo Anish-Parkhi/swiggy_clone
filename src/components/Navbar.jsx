@@ -1,7 +1,9 @@
 import navList from '../../utils/common/navList';
 import { swiggyLogoURL } from '../../utils/common/imageLinks';
+import { useState } from 'react';
 
 const Navbar = () => {
+  const [openSearch, setOpenSearch] = useState(false);
   return (
     <nav className="flex justify-around p-6 border-2 items-center">
       <img className="w-8 cursor-pointer" src={swiggyLogoURL} />

@@ -2,6 +2,7 @@ import { BrowserRouter, Outlet, Route, Routes } from 'react-router-dom';
 import './App.css';
 import Home from './components/Home.jsx';
 import Navbar from './components/Navbar.jsx';
+import ResturantMenu from './components/resturantMenu/ResturantMenu.jsx';
 import './index.css';
 
 function App() {
@@ -19,6 +20,7 @@ function App() {
       <Routes>
         <Route path="/" element={<Landing />}>
           <Route index element={<Home />} />
+          <Route path="/resturant/:id" element={<ResturantMenu />} />
         </Route>
       </Routes>
     </BrowserRouter>
