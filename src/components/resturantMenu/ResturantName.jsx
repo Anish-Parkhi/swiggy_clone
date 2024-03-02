@@ -3,7 +3,6 @@ import CurrencyRupeeRoundedIcon from '@mui/icons-material/CurrencyRupeeRounded';
 import StarIcon from '@mui/icons-material/Star';
 
 const ResturantName = ({ apiData }) => {
-  console.log(apiData?.data?.cards[0]?.card?.card?.info?.name);
   const resturantName = apiData?.data?.cards[0]?.card?.card?.info?.name;
   const costForTwo = apiData?.data?.cards[0]?.card?.card?.info?.costForTwo;
   const rating = apiData?.data?.cards[0]?.card?.card?.info?.avgRatingString;
@@ -23,7 +22,7 @@ const ResturantName = ({ apiData }) => {
         <div>
           <div className="text-2xl font-extrabold">{resturantName}</div>
           <div className="text-sm text-slate-500">
-            {cuisines.map((item) => item).join(', ')}
+            {cuisines?.map((item) => item).join(', ')}
           </div>
           <div className="text-sm	text-slate-500">
             {areaName} {distance / 1000} km
