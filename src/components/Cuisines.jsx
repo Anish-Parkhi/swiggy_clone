@@ -1,13 +1,19 @@
-import useFetchApi from '../../utils/useFetchApi';
-import { cuisineAPIURL } from '../../utils/common/apiURL';
+import cuisinesImageURL from '../../utils/common/imageLinks';
 
-const Cuisines = () => {
-  const apiData = useFetchApi(cuisineAPIURL);
-  console.log(apiData?.data?.cards[0]?.card?.card?.header?.title);
+const Cuisines = ({ apiData }) => {
+  const cuisineHeader = apiData?.data?.cards[0]?.card?.card?.header?.title;
+  const cuisingImages =
+    apiData?.data?.cards[0]?.card?.card?.imageGridCards?.info;
 
   return (
-    <div>
-      <div>Cuisines</div>
+    <div className="p-5">
+      <span className="text-2xl font-extrabold">{cuisineHeader}</span>
+      <div className="flex justify-center gap-3	">
+        {cuisinesImageURL.map((item) => {
+          return <img className="w-40" key={item.id} src={item.url} />;
+        })}
+      </div>
+      <hr className="h-px my-8 bg-gray-200 border-0 dark:bg-gray-400 shadow-md " />
     </div>
   );
 };
