@@ -3,10 +3,10 @@ import Cuisines from './Cuisines';
 import ResturantsListing from './ResturantsListing';
 
 import { cuisineAPIURL } from '../../utils/common/apiURL';
-
-//make an api call over here and then pass it down to all the components
+import { useState } from 'react';
 
 const Home = () => {
+  const [loading, setLoading] = useState(true);
   const apiData = useFetchApi(cuisineAPIURL);
   return (
     <div>

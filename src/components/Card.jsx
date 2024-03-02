@@ -2,7 +2,6 @@ import StarRoundedIcon from '@mui/icons-material/StarRounded';
 import CDNURL from '../../utils/common/cdnURl';
 
 const Card = ({ resturantData }) => {
-  console.log(resturantData?.info?.cuisines);
   return (
     <div className="basis-1/5">
       <img

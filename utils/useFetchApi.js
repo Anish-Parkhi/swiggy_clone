@@ -4,9 +4,13 @@ const useFetchApi = (apiURL) => {
   const [apiData, setApiData] = useState('');
   useEffect(() => {
     const fetchApi = async () => {
-      const data = await fetch(apiURL);
-      const json = await data.json();
-      setApiData(json);
+      try {
+        const data = await fetch(apiURL);
+        const json = await data.json();
+        setApiData(json);
+      } catch (error) {
+        console.log(error);
+      }
     };
     fetchApi();
   }, []);
