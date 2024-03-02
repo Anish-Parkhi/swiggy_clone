@@ -1,6 +1,6 @@
 import useFetchApi from '../../utils/useFetchApi';
 import Cuisines from './Cuisines';
-import Navbar from './Navbar';
+import ResturantsListing from './ResturantsListing';
 
 import { cuisineAPIURL } from '../../utils/common/apiURL';
 
@@ -12,6 +12,7 @@ const Home = () => {
     <div>
       <div className="w-4/5 m-auto">
         <Cuisines apiData={apiData} />
+        <ResturantsListing apiData={apiData} />
       </div>
     </div>
   );

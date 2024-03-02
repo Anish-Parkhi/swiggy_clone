@@ -1,9 +1,10 @@
 import navList from '../../utils/common/navList';
+import { swiggyLogoURL } from '../../utils/common/imageLinks';
 
 const Navbar = () => {
   return (
-    <nav className="flex justify-around p-6 border-2">
-      <div>Swiggy</div>
+    <nav className="flex justify-around p-6 border-2 items-center">
+      <img className="w-8 cursor-pointer" src={swiggyLogoURL} />
       <ul className="flex justify-evenly gap-8 basis-5/12">
         {navList.map((navItem) => (
           <li key={navItem.id} className="text-lg cursor-pointer items-center">
