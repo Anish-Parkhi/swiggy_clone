@@ -8,7 +8,7 @@ const FilterModal = ({
   deliveryTime,
 }) => {
   return (
-    <div className="bg-white p-10 rounded-lg">
+    <div className="bg-white p-10 rounded-lg flex flex-col">
       <div>Ratings</div>
       <div className="mt-4 flex justify-start gap-4">
         <button
@@ -70,7 +70,7 @@ const FilterModal = ({
         </button>
       </div>
 
-      <div>
+      <div className="self-end">
         <button
           onClick={() => {
             setRating(0);

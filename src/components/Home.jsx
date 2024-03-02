@@ -1,6 +1,7 @@
 import useFetchApi from '../../utils/useFetchApi';
 import Cuisines from './Cuisines';
 import ResturantsListing from './ResturantsListing';
+import Footer from './Footer';
 
 import { cuisineAPIURL } from '../../utils/common/apiURL';
 import { useState } from 'react';
@@ -14,6 +15,7 @@ const Home = () => {
         <Cuisines apiData={apiData} />
         <ResturantsListing apiData={apiData} />
       </div>
+      <Footer />
     </div>
   );
 };
