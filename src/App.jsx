@@ -1,10 +1,11 @@
 import './App.css';
 import './index.css';
+import Home from './components/Home.jsx';
 
 function App() {
   return (
     <>
-      <div className="text-3xl font-bold underline">Jai Babaji</div>
+      <Home />
     </>
   );
 }
