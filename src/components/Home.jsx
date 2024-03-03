@@ -18,9 +18,10 @@ const Home = () => {
         <div className="w-4/5 m-auto">
           {' '}
           <Cuisines apiData={apiData} />
-          <ResturantsListing apiData={apiData} /> <Footer />
+          <ResturantsListing apiData={apiData} />
         </div>
       )}
+      <Footer />
     </div>
   );
 };
