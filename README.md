@@ -60,10 +60,3 @@ npm start
 
 Once the development server is running, open your web browser and navigate to `http://localhost:5173/` to view the Swiggy clone application.
 
-
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
-
-## Acknowledgements
-
-- This project utilizes the Swiggy API for fetching data. Special thanks to Swiggy for providing the API access.
-- Tailwind CSS is used for styling, making UI development faster and more efficient.
