@@ -17,7 +17,9 @@ This project is a clone of Swiggy, a popular food delivery platform. It utilizes
 
 ![Resturants Listing](https://github.com/Anish-Parkhi/swiggy_clone/assets/93964690/98787cf6-0bb8-4282-bcb2-8b5b98c664ad)
 
-![Resturant Menu](https://github.com/Anish-Parkhi/swiggy_clone/assets/93964690/465b9364-eaf6-4f77-ba0d-04d12440ade8)
+![Resturant Menu](https://github.com/Anish-Parkhi/swiggy_clone/assets/93964690/1aa0a4d8-fa17-44a2-9c53-11dd75870493)
+
+![Resturant Filter](https://github.com/Anish-Parkhi/swiggy_clone/assets/93964690/465b9364-eaf6-4f77-ba0d-04d12440ade8)
 
 ![Cart](https://github.com/Anish-Parkhi/swiggy_clone/assets/93964690/452cacb1-bd95-489d-a325-9d1718915f23)
 
