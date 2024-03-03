@@ -23,7 +23,11 @@ const ResturantMenu = () => {
       <ResturantName apiData={apiData} />
       <div className="flex flex-col gap-3 mt-5">
         {categoriesData?.map((categoryItem, index) => (
-          <CategoryItems key={index} categoryItem={categoryItem} />
+          <CategoryItems
+            key={index}
+            categoryItem={categoryItem}
+            myIndex={index}
+          />
         ))}
       </div>
     </div>

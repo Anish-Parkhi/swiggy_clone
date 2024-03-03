@@ -1,12 +1,16 @@
-import navList from '../../utils/common/navList';
+import { useNavigate } from 'react-router-dom';
 import { swiggyLogoURL } from '../../utils/common/imageLinks';
-import { useState } from 'react';
+import navList from '../../utils/common/navList';
 
 const Navbar = () => {
-  const [openSearch, setOpenSearch] = useState(false);
+  const navigate = useNavigate();
   return (
     <nav className="flex justify-around p-6 border-2 items-center">
-      <img className="w-8 cursor-pointer" src={swiggyLogoURL} />
+      <img
+        onClick={() => navigate('/')}
+        className="w-8 cursor-pointer"
+        src={swiggyLogoURL}
+      />
       <ul className="flex justify-evenly gap-8 basis-5/12">
         {navList.map((navItem) => (
           <li key={navItem.id} className="text-lg cursor-pointer items-center">
