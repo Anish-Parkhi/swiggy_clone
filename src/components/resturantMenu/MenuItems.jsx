@@ -1,3 +1,5 @@
+import { useContext } from 'react';
+import CartContext from '../../../utils/CartContext';
 import CDNURL from '../../../utils/common/cdnURl';
 import { nonVegLogo, vegLogo } from '../../../utils/common/imageLinks';
 
@@ -7,6 +9,8 @@ const MenuItems = ({ foodItem }) => {
   const price = foodItem?.card?.info?.price;
   const description = foodItem?.card?.info?.description;
   const isVeg = foodItem?.card?.info?.itemAttribute?.vegClassifier;
+
+  const CartContextData = useContext(CartContext);
 
   const notFound =
     'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQkTzf4dWIc65K6-mymapJODZEtobt7J-XXbkNCcz8gVQ&s';
@@ -31,7 +35,15 @@ const MenuItems = ({ foodItem }) => {
             className="w-4/5 self-center text-white h-4/5	basis-4/5"
             src={image ? CDNURL + image : notFound}
           />
-          <button className="absolute top-3/4 bg-white p-2 self-center border-2 rounded-md text-lime-600	w-2/3 m-auto">
+          <button
+            onClick={() => {
+              CartContextData?.setCartItems((prev) => [
+                ...prev,
+                foodItem?.card?.info,
+              ]);
+            }}
+            className="absolute top-3/4 bg-white p-2 self-center border-2 rounded-md text-lime-600	w-2/3 m-auto"
+          >
             Add
           </button>
         </div>

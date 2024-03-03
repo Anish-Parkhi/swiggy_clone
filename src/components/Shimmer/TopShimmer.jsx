@@ -21,8 +21,8 @@ const TopShimmer = () => {
         </div>
       </div>
       <div className="flex w-2/3 gap-10 mt-4 mb-4 m-auto flex-wrap justify-center ">
-        {cards.map((item) => (
-          <ShimmerCard />
+        {cards.map((item, index) => (
+          <ShimmerCard key={index} />
         ))}
       </div>
     </>

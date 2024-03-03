@@ -8,23 +8,26 @@ const navList = [
     id: 1,
     name: 'Search',
     icon: SearchOutlinedIcon,
-    
+    to: '/',
   },
   {
     id: 2,
     name: 'Offers',
     icon: PercentOutlinedIcon,
+    to: '/',
   },
   {
     id: 3,
     name: 'Sign In',
     icon: AccountCircleOutlinedIcon,
+    to: '/',
   },
   {
     id: 4,
     name: 'Cart',
     icon: ShoppingBasketOutlinedIcon,
+    to: '/cart',
   },
 ];
 
-export default navList
+export default navList;
