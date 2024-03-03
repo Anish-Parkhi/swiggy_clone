@@ -23,7 +23,10 @@ const MenuItems = ({ foodItem }) => {
           <div>₹ {price / 100}</div>
           <div className="text-sm">{description}</div>
         </div>
-        <div className="relative flex flex-col justify-center basis-1/5 items-end">
+        <div
+          style={{ zIndex: 999 }}
+          className="relative flex flex-col justify-center basis-1/5 items-end"
+        >
           <img
             className="w-4/5 self-center text-white h-4/5	basis-4/5"
             src={image ? CDNURL + image : notFound}

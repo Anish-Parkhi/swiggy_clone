@@ -5,7 +5,7 @@ import navList from '../../utils/common/navList';
 const Navbar = () => {
   const navigate = useNavigate();
   return (
-    <nav className="flex justify-around p-6 border-2 items-center">
+    <nav className="sticky top-0 bg-white flex justify-around p-6 border-2 items-center">
       <img
         onClick={() => navigate('/')}
         className="w-8 cursor-pointer"

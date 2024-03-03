@@ -1,21 +1,26 @@
+import { useState } from 'react';
+import { cuisineAPIURL } from '../../utils/common/apiURL';
 import useFetchApi from '../../utils/useFetchApi';
 import Cuisines from './Cuisines';
-import ResturantsListing from './ResturantsListing';
 import Footer from './Footer';
-
-import { cuisineAPIURL } from '../../utils/common/apiURL';
-import { useState } from 'react';
+import ResturantsListing from './ResturantsListing';
+import ShimmerMain from './Shimmer/ShimmerMain';
 
 const Home = () => {
   const [loading, setLoading] = useState(true);
-  const apiData = useFetchApi(cuisineAPIURL);
+  const apiData = useFetchApi(cuisineAPIURL, setLoading);
+
   return (
     <div>
-      <div className="w-4/5 m-auto">
-        <Cuisines apiData={apiData} />
-        <ResturantsListing apiData={apiData} />
-      </div>
-      <Footer />
+      {loading ? (
+        <ShimmerMain />
+      ) : (
+        <div className="w-4/5 m-auto">
+          {' '}
+          <Cuisines apiData={apiData} />
+          <ResturantsListing apiData={apiData} /> <Footer />
+        </div>
+      )}
     </div>
   );
 };

@@ -43,8 +43,8 @@ const ResturantsListing = ({ apiData }) => {
   // now make fearture of delivery time
 
   return (
-    <div className="p-6 pt-0 mt-0">
-      <div className="sticky top-0 bg-white	p-2">
+    <div className="p-6 pt-0">
+      <div className=" bg-white	p-2">
         <span className="text-2xl font-extrabold ">
           Restaurants with online food delivery in Chennai
         </span>

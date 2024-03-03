@@ -5,11 +5,11 @@ import { useNavigate } from 'react-router-dom';
 const Card = ({ resturantData }) => {
   const navigate = useNavigate();
   const resId = resturantData?.info?.id;
-  
+
   return (
     <div
       onClick={() => {
-        navigate(`/resturant/${resId}`, {state:resId});
+        navigate(`/resturant/${resId}`, { state: resId });
       }}
       className="basis-1/5 cursor-pointer"
     >
@@ -18,7 +18,10 @@ const Card = ({ resturantData }) => {
         src={CDNURL + resturantData?.info?.cloudinaryImageId}
       />
       <div className="w-11/12 m-auto flex-1 mt-2">
-        <span className="text-xl font-bold">{resturantData?.info?.name}</span>
+        <span className="text-base font-bold">
+          {resturantData?.info?.name.slice(0, 24)}
+          {resturantData?.info?.name.length > 28 ? '...' : null}
+        </span>
         <div className="flex items-center gap-1">
           <StarRoundedIcon />
           <div>{resturantData?.info?.avgRating} ·</div>
