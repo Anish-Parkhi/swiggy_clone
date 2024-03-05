@@ -1,10 +1,12 @@
 import { useContext } from 'react';
 import { useNavigate } from 'react-router-dom';
-import CartContext from '../../utils/CartContext';
+import {CartContext} from '../../utils/CartContext';
 import CartItems from './CartItems';
+import { useCartContext } from '../../utils/CartContext';
 
 const Cart = () => {
-  const cartData = useContext(CartContext);
+  // const cartData = useContext(CartContext);
+  const cartData = useCartContext();
   const navigate = useNavigate();
 
   const EmptyCart = () => {
@@ -22,15 +24,24 @@ const Cart = () => {
     );
   };
 
+  console.log(cartData);
+
   return (
     <div className="w-2/3 m-auto p-3 ">
       <div>
-        {cartData.length > 0 ? (
+        {cartData?.cartItems?.length > 0 ? (
           <>
             <div className="font-bold text-lg	">Cart</div>
-            cartData?.cartItems?.map((item, index) => (
-            <CartItems data={item} key={index} />
-            ))
+            {cartData?.cartItems?.map((item, index) => (
+              <CartItems data={item} key={index} />
+            ))}
+            <div className="mt-4 flex items-center justify-between">
+              <div>
+                <span>Cart subtotal: </span>
+                <span> {cartData?.cartItems[0]?.price / 100}</span>
+              </div>
+              <button className="border-2 p-2 rounded">Proceed to pay</button>
+            </div>
           </>
         ) : (
           <EmptyCart />

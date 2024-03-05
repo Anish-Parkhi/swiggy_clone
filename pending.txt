@@ -1,0 +1,3 @@
+useMemo for optimization
+delete items from the cart 
+subtotal in the cart

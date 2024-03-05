@@ -1,7 +1,6 @@
-import { useContext } from 'react';
-import CartContext from '../../../utils/CartContext';
 import CDNURL from '../../../utils/common/cdnURl';
 import { nonVegLogo, vegLogo } from '../../../utils/common/imageLinks';
+import { useCartContext } from '../../../utils/CartContext';
 
 const MenuItems = ({ foodItem }) => {
   const name = foodItem?.card?.info?.name;
@@ -10,7 +9,11 @@ const MenuItems = ({ foodItem }) => {
   const description = foodItem?.card?.info?.description;
   const isVeg = foodItem?.card?.info?.itemAttribute?.vegClassifier;
 
-  const CartContextData = useContext(CartContext);
+  // const CartContextData = useContext(CartContext);
+
+  const CartContextData = useCartContext();
+
+  console.log(CartContextData);
 
   const notFound =
     'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQkTzf4dWIc65K6-mymapJODZEtobt7J-XXbkNCcz8gVQ&s';

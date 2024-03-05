@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { BrowserRouter, Outlet, Route, Routes } from 'react-router-dom';
-import CartContext from '../utils/CartContext.js';
+import {CartContext} from '../utils/CartContext.js';
 import './App.css';
 import Cart from './components/Cart.jsx';
 import Home from './components/Home.jsx';
