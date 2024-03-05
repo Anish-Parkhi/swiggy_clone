@@ -40,7 +40,7 @@ const ResturantsListing = ({ apiData }) => {
       (isVegSelected ? prev?.info?.veg === true : true)
   );
 
-  // now make fearture of delivery time
+  // now make filter of delivery time
 
   return (
     <div className="p-6 pt-0">

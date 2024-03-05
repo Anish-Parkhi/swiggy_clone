@@ -1,9 +1,9 @@
 import { useState } from 'react';
 import { useLocation } from 'react-router-dom';
 import useFetchApi from '../../../utils/useFetchApi';
-import ShimmerResturant from '../Shimmer/ShimmerResturant';
 import CategoryItems from './CategoryItems';
 import ResturantName from './ResturantName';
+import ShimmerResturant from '../../components/Shimmer/ShimmerResturant';
 
 const ResturantMenu = () => {
   const location = useLocation();
@@ -22,24 +22,26 @@ const ResturantMenu = () => {
         'type.googleapis.com/swiggy.presentation.food.v2.ItemCategory'
     );
 
+  if (loading) {
+    return (
+      <div className="w-3/6 m-auto p-4">
+        <ShimmerResturant />
+      </div>
+    );
+  }
+
   return (
     <div className="w-3/6 m-auto p-4">
-      {loading ? (
-        <ShimmerResturant />
-      ) : (
-        <>
-          <ResturantName apiData={apiData} />
-          <div className="flex flex-col gap-3 mt-5">
-            {categoriesData?.map((categoryItem, index) => (
-              <CategoryItems
-                key={index}
-                categoryItem={categoryItem}
-                myIndex={index}
-              />
-            ))}
-          </div>
-        </>
-      )}
+      <ResturantName apiData={apiData} />
+      <div className="flex flex-col gap-3 mt-5">
+        {categoriesData?.map((categoryItem, index) => (
+          <CategoryItems
+            key={index}
+            categoryItem={categoryItem}
+            myIndex={index}
+          />
+        ))}
+      </div>
     </div>
   );
 };

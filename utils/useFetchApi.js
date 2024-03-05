@@ -14,7 +14,7 @@ const useFetchApi = (apiURL, setLoading) => {
       }
     };
     fetchApi();
-  }, []);
+  }, [apiURL, setLoading]);
   return apiData;
 };
 

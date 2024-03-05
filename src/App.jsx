@@ -1,12 +1,11 @@
-import { useState } from 'react';
 import { BrowserRouter, Outlet, Route, Routes } from 'react-router-dom';
-import {CartContext} from '../utils/CartContext.js';
 import './App.css';
 import Cart from './components/Cart.jsx';
 import Home from './components/Home.jsx';
 import Navbar from './components/Navbar.jsx';
 import ResturantMenu from './components/resturantMenu/ResturantMenu.jsx';
 import './index.css';
+import MenuProvider from './Context.jsx';
 
 function App() {
   const Landing = () => {
@@ -18,10 +17,8 @@ function App() {
     );
   };
 
-  const [cartItems, setCartItems] = useState([]);
-
   return (
-    <CartContext.Provider value={{ cartItems, setCartItems }}>
+    <MenuProvider >
       <BrowserRouter>
         <Routes>
           <Route path="/" element={<Landing />}>
@@ -31,7 +28,7 @@ function App() {
           </Route>
         </Routes>
       </BrowserRouter>
-    </CartContext.Provider>
+    </MenuProvider>
   );
 }
 

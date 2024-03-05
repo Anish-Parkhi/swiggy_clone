@@ -2,9 +2,6 @@ import cuisinesImageURL from '../../utils/common/imageLinks';
 
 const Cuisines = ({ apiData }) => {
   const cuisineHeader = apiData?.data?.cards[0]?.card?.card?.header?.title;
-  const cuisingImages =
-    apiData?.data?.cards[0]?.card?.card?.imageGridCards?.info;
-
   return (
     <div className="p-5">
       <span className="text-2xl font-extrabold">{cuisineHeader}</span>

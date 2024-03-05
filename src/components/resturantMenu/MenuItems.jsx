@@ -1,19 +1,13 @@
+/* eslint-disable react/prop-types */
+import { useCartContext } from '../../../utils/CartContext';
 import CDNURL from '../../../utils/common/cdnURl';
 import { nonVegLogo, vegLogo } from '../../../utils/common/imageLinks';
-import { useCartContext } from '../../../utils/CartContext';
 
 const MenuItems = ({ foodItem }) => {
-  const name = foodItem?.card?.info?.name;
-  const image = foodItem?.card?.info?.imageId;
-  const price = foodItem?.card?.info?.price;
-  const description = foodItem?.card?.info?.description;
-  const isVeg = foodItem?.card?.info?.itemAttribute?.vegClassifier;
+  const { name, imageId: image, price, description, isVeg } = foodItem || {};
+  console.log(foodItem);
 
-  // const CartContextData = useContext(CartContext);
-
-  const CartContextData = useCartContext();
-
-  console.log(CartContextData);
+  const { addToCart } = useCartContext();
 
   const notFound =
     'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQkTzf4dWIc65K6-mymapJODZEtobt7J-XXbkNCcz8gVQ&s';
@@ -22,10 +16,7 @@ const MenuItems = ({ foodItem }) => {
     <>
       <div className="flex flex-row justify-between items-center">
         <div className="basis-3/4">
-          <img
-            className="w-5 mb-2"
-            src={isVeg !== 'NONVEG' ? vegLogo : nonVegLogo}
-          />
+          <img className="w-5 mb-2" src={isVeg ? vegLogo : nonVegLogo} />
           <div className="font-bold">{name}</div>
           <div>₹ {price / 100}</div>
           <div className="text-sm">{description}</div>
@@ -40,10 +31,7 @@ const MenuItems = ({ foodItem }) => {
           />
           <button
             onClick={() => {
-              CartContextData?.setCartItems((prev) => [
-                ...prev,
-                foodItem?.card?.info,
-              ]);
+              addToCart(foodItem?.card?.info);
             }}
             className="absolute top-3/4 bg-white p-2 self-center border-2 rounded-md text-lime-600	w-2/3 m-auto"
           >

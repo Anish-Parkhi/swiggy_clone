@@ -24,7 +24,7 @@ const CategoryItems = ({ categoryItem, myIndex }) => {
       {isOpen ? (
         <ul className="flex flex-col gap-2">
           {categoryItem?.card?.card?.itemCards?.map((foodItem, index) => (
-            <MenuItems key={index} foodItem={foodItem} />
+            <MenuItems key={index} foodItem={foodItem?.card?.info} />
           ))}
         </ul>
       ) : null}
