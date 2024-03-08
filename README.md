@@ -62,3 +62,7 @@ npm start
 
 Once the development server is running, open your web browser and navigate to `http://localhost:5173/` to view the Swiggy clone application.
 
+```
+The API of swiggy might changing upon their dev
+```
+
